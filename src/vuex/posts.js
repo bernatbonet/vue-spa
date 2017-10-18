@@ -14,13 +14,9 @@ const getters = {
 
 const actions = {
   updateCategory (context, categoryId) {
-    return appService.getPosts(categoryId)
-      .then(data => {
-        context.commit('updateCategory', { categoryId, posts: data })
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    return appService.getPosts(categoryId).then(data => {
+      context.commit('updateCategory', { categoryId, posts: data })
+    })
   }
 }
 

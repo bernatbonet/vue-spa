@@ -14,8 +14,11 @@ const appService = {
   getPosts (categoryId) {
     return new Promise((resolve) => {
       axios.get(`/wp-json/wp/v2/posts?categories=${categoryId}&per_page=6`)
-        .then(response => {
+        .then((response) => {
           resolve(response.data)
+        })
+        .catch((error) => {
+          resolve(error)
         })
     })
   },
