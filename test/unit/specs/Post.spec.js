@@ -20,6 +20,7 @@ describe('Post.vue', () => {
     const comp = createComponent()
     expect(comp.$el.querySelector('.card-footer-item').getAttribute('href'))
       .to.equal('http://www.pluralsight.com')
+    done()
 
     comp.link = 'http://fullstackweekly.com'
     Vue.nextTick(() => {
